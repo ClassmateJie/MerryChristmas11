@@ -19,8 +19,38 @@
 		box.addEventListener( 'click', runAnimation );
 	}
 
+	function playAudio(src) {
+		if(typeof Audio != "undefined") {
+			// new Audio(src).play();
+			var audio = new Audio(src);
+			 // 将 loop 属性设置为 true
+			audio.loop = true;
+			audio.play();
+		} else if(typeof device != "undefined") {
+			if(device.platform == 'Android') {
+				console.log(src);
+			}
+			var mediaRes = new Media(src,
+				function onSuccess() {
+					mediaRes.release();
+				},
+				function onError(e) {
+					console.log("error playing sound: " + JSON.stringify(e));
+				});
+				// 设置循环播放
+			mediaRes.setVolume(1.0); // 设置音量（可选）
+			mediaRes.setLooping(true); // 设置循环播放
+			mediaRes.play();
+
+		} else {
+			alert("no sound API to play: " + src);
+		}
+	}
+
 	function runAnimation() {
 		if( step === 1 ) {
+			playAudio("https://img.tukuppt.com/newpreview_music/09/01/65/5c89ff80b7fe947279.mp3");
+
 			box.removeEventListener( 'click', runAnimation );
 		}
 		incStep( step );
