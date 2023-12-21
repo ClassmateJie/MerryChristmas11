@@ -5,8 +5,8 @@ html, body, .container {
 }
 
 body {
-	background: url(../img/winterforest.png) repeat-x top center,  url(https://s11.ax1x.com/2023/12/20/pioXIEt.jpg) repeat-x center center, 
-	url(../img/winterforest.png) repeat-x bottom center;
+	background: url(https://qiniu.jie-code.cn/picgo/winterforest.png) repeat-x top center,  url(https://qiniu.jie-code.cn/picgo/pic2.jpg) repeat-x center center, 
+	url(https://qiniu.jie-code.cn/picgo/winterforest.png) repeat-x bottom center;
 	background-size: contain;
 	 /* 防止背景图片重复 */
     background-repeat: no-repeat;
